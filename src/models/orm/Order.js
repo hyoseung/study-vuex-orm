@@ -1,4 +1,5 @@
 import { Model } from '@vuex-orm/core'
+import Detail from './Detail';
 
 export default class Order extends Model {
   // This is the name used as module name of the Vuex Store.
@@ -15,7 +16,8 @@ export default class Order extends Model {
       orderNo: this.string(null).nullable(),
       name: this.string(null).nullable(),
       phone: this.string(null).nullable(),
-      paymentType: this.string(null).nullable() // 결제방법 (카드, 무통장입금)
+      paymentType: this.string(null).nullable(), // 결제방법 (카드, 무통장입금)
+      details: this.hasMany(Detail, 'orderId')
     }
   }
 }

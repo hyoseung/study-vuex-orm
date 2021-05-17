@@ -1,4 +1,5 @@
 import { Model } from '@vuex-orm/core'
+import Delivery from './Delivery';
 
 export default class Detail extends Model {
   // This is the name used as module name of the Vuex Store.
@@ -16,7 +17,10 @@ export default class Detail extends Model {
       itemName: this.string(null).nullable(),
       itemCategory: this.string(null).nullable(), // 품목카테고리 (패션, 뷰티, 식품, 생필품, 디지털)
       quantity: this.number(0),
-      price: this.number(0)
+      price: this.number(0),
+      orderId: this.number(null),
+      deliveryIdTest: this.number(null),
+      delivery: this.hasOne(Delivery, 'deliveryId', 'deliveryIdTest')
     }
   }
 }
