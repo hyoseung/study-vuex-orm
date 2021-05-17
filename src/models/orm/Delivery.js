@@ -13,7 +13,6 @@ export default class Delivery extends Model {
     return {
       deliveryId: this.number(null),
       address: this.string(null).nullable(),
-      addressDetail: this.string(null).nullable(),
       post: this.string(null).nullable()
     }
   }
