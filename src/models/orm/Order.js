@@ -17,6 +17,7 @@ export default class Order extends Model {
       name: this.string(null).nullable(),
       phone: this.string(null).nullable(),
       paymentType: this.string(null).nullable(), // 결제방법 (카드, 무통장입금)
+      orderDate: this.string(null).nullable(),
       details: this.hasMany(Detail, 'orderId')
     }
   }
