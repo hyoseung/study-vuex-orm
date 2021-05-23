@@ -9,17 +9,31 @@ export const data = [
     details: [
       {
         detailId: 100,
-        itemCode: 'A1000',
-        itemName: '흰색 셔츠',
-        itemCategory: '패션', // 패션, 뷰티, 식품, 생필품, 디지털
+        storeName: '리리엔코',
+        itemName: '플렌디 플라워 랩스타일 롱 원피스',
+        itemCategory: '원피스', // 상의, 하의, 원피스, 아우터
         quantity: 1,
-        price: 12000,
+        price: 38800,
         orderId: 1,
         deliveryIdTest: 1000,
         delivery: {
           deliveryId: 1000,
-          address: '서울시 동대문구 답십리',
+          address: '서울시 동대문구 A',
           post: '12345'
+        }
+      }, {
+        detailId: 101,
+        storeName: '에브리모닝',
+        itemName: '웰드하프크롭자켓 (3color)',
+        itemCategory: '아우터',
+        quantity: 1,
+        price: 52000,
+        orderId: 1,
+        deliveryIdTest: 1001,
+        delivery: {
+          deliveryId: 1001,
+          address: '서울시 동대문구 B',
+          post: '12346'
         }
       }
     ]
