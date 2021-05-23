@@ -22,6 +22,9 @@ export default {
     this.setVuexOrm();
     this.getData();
   },
+  destroyed() {
+    this.$store.dispatch('entities/deleteAll');
+  },
   methods: {
     async setVuexOrm() {
       await Order.create({ data });
