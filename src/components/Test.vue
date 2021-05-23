@@ -1,6 +1,9 @@
 <template>
   <div>
     <h1>veux-orm 테스트</h1>
+    <div>
+      {{ orderList }}
+    </div>
   </div>
 </template>
 
@@ -12,16 +15,31 @@ export default {
   name: 'Test',
   data() {
     return {
-      list: []
+      orderList: []
     }
   },
   created() {
     this.setVuexOrm();
+    this.getData();
   },
   methods: {
     async setVuexOrm() {
       await Order.create({ data });
       //await Order.create({ data: data });
+    },
+    getData() {
+      let data = Order.query().with('details', (query) => {
+          query.with('delivery')
+        }).get();
+      console.log(data);
+
+      let result = [];
+      data.forEach(order => {
+        result.push({
+          ...order.$toJson() // $id 제외
+        });
+      });
+      this.orderList = result;
     }
   }
 }
